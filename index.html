@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Controle Financeiro</title>
+   <link rel="stylesheet" href="estilo.css">
+   <script defer src="script.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+   <main>
+      <header>
+         <h1><i class="fas fa-wallet"></i> Controle Financeiro</h1>
+      </header>
+
+      <section class="form-dados">
+         <h2>Controle de Gastos</h2>
+         <form id="formulario">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" required>
+               <option value="entrada">Entrada</option>
+               <option value="saida">Saída</option>
+            </select>
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" required>
+
+            <label for="valor">Valor:</label>
+            <input type="number" id="valor" required step="0.01" min="0">
+
+            <label for="data">Data:</label>
+            <input type="date" id="data" required>
+
+            <button type="submit" id="submit-btn">
+               <i class="fas fa-plus-circle"></i> Adicionar
+            </button>
+         </form>
+
+         <div class="tabela-container">
+            <table id="tabela-gastos">
+               <thead>
+                  <tr>
+                     <th>Tipo</th>
+                     <th>Descrição</th>
+                     <th>Valor</th>
+                     <th>Data</th>
+                     <th>Ações</th>
+                  </tr>
+               </thead>
+               <tbody></tbody>
+            </table>
+         </div>
+      </section>
+
+      <section class="form-resumo">
+         <h2>Resumo Financeiro</h2>
+         <div id="resumo-financeiro">
+            <p>Total de Receitas: <span id="total-receitas">R$ 0,00</span></p>
+            <p>Total de Gastos: <span id="total-gastos">R$ 0,00</span></p>
+            <p>Saldo: <span id="saldo">R$ 0,00</span></p>
+         </div>
+         <div class="botoes-resumo">
+            <button id="gerar-relatorio"><i class="fas fa-file-alt"></i> Gerar Relatório</button>
+            <button id="exportar-csv"><i class="fas fa-file-csv"></i> Exportar CSV</button>
+         </div>
+
+         <!-- Canvas para o gráfico -->
+         <div id="grafico-container" style="display: none;">
+            <canvas id="grafico" width="400" height="200"></canvas>
+         </div>
+      </section>
+
+      <footer>
+         <p>Desenvolvido por <a href="https://github.com/alecipriano">CiprianoDev</a></p>
+      </footer>
+   </main>
+</body>
+</html>

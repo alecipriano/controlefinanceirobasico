@@ -1,0 +1,263 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+   background-color: #121212;
+   color: #f1f1f1;
+   display: flex;
+   justify-content: center;
+   padding: 20px;
+}
+
+main {
+   background-color: #fff;
+   width: 100%;
+   max-width: 930px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 15px rgba(0,0,0,0.3);
+   color: #333;
+}
+
+header {
+   margin-top: 5px;
+   font-size: 14px;
+   color: #dbad14;
+   background-color: #121212;
+   border-radius: 10px 10px 0px 0px;
+   padding: 10px;
+}
+
+header, footer {
+   text-align: center;
+}
+
+section {
+   background-color: #f1f1f1;
+   padding: 20px;
+   margin: 0px 0px 5px 0px;   
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+form {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+   align-items: center;
+}
+
+form label {
+   width: 100%;
+   font-weight: bold;
+}
+
+form input, form select, form button {
+   flex: 1 1 200px;
+   padding: 10px;
+   border-radius: 8px;
+   border: 1px solid #ccc;
+}
+
+form button {
+   background-color: #1976d2;
+   color: white;
+   cursor: pointer;
+   transition: background 0.3s ease;
+   font-weight: bold;
+}
+
+form button:hover {
+   background-color: #135ba1;
+}
+
+.tabela-container {
+   width: 100%;
+   overflow-x: auto;
+}
+
+.tabela-container table {
+   min-width: 600px;
+}
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 15px;
+   border-radius: 10px;
+}
+
+th {
+   background-color: #1976d2;
+   color: white;
+}
+
+th, td {
+   border: 1px solid #ccc;
+   padding: 8px;
+   text-align: center;
+}
+
+#gerar-relatorio, #exportar-csv {
+   background-color: #1976d2;  
+   color: white;               
+   border: none;               
+   padding: 10px;              
+   border-radius: 8px;        
+   cursor: pointer;           
+   font-weight: bold;          
+   transition: background 0.3s ease;  
+}
+
+#gerar-relatorio:hover, #exportar-csv:hover {
+   background-color: #135ba1; 
+}
+
+#grafico-container {
+   margin-top: 20px;
+   display: block;
+   text-align: center;
+}
+
+.valor-saida {
+   color: red;
+   font-weight: bold;
+}
+
+.valor-entrada {
+   color: green;
+   font-weight: bold;
+}
+
+#resumo-financeiro p {
+   margin: 5px 0;
+   font-weight: bold;
+}
+
+#saldo.positivo {
+   color: green;
+}
+
+#saldo.negativo {
+   color: red;
+}
+
+button i {
+   margin-right: 5px;
+}
+
+#submit-btn.edicao {
+   background-color: #28a745;
+   color: #fff;
+   border: none;
+   transition: background-color 0.3s;
+}
+
+#submit-btn.edicao:hover {
+   background-color: #218838;
+}
+
+#total-receitas {
+   color: green;
+   font-weight: bold;
+}
+
+#total-gastos {
+   color: red;
+   font-weight: bold;
+}
+
+.acao-btn {
+   background-color: #1976d2;
+   color: white;
+   border: none;
+   padding: 10px;
+   border-radius: 8px;
+   cursor: pointer;
+   font-weight: bold;
+   transition: background-color 0.3s;
+}
+
+.acao-btn:hover {
+   background-color: #135ba1;
+}
+
+h2 {
+   font-size: 26px;
+   margin-bottom: 10px;
+   color: #1976d2;
+}
+
+.botoes-resumo {
+   display: flex;
+   justify-content:center;
+   margin: 10px;
+   gap: 10px;
+}
+
+footer {
+   margin-top: 20px 0px 5px 0px;
+   font-size: 14px;
+   color: #dbad14;
+   background-color: #121212;
+   border-radius: 0px 0px 10px 10px;
+   padding: 10px;
+}
+
+footer a {
+   color: #f1f1f1;
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s;
+}
+
+footer a:hover {
+   text-decoration: underline;
+}
+
+footer p {
+   margin: 5px 0;
+   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+   form {
+     flex-direction: column;
+     gap: 10px;
+   }
+
+   form input, form select, form button {
+     width: 100%;
+     padding: 8px 10px;
+     font-size: 16px;
+     flex: none;
+   }
+
+   table, th, td {
+     font-size: 14px;
+   }
+
+   #grafico-container canvas {
+     width: 100%;
+     height: auto;
+   }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+   form input, form select, form button {
+     padding: 9px 12px;
+     font-size: 17px;
+     flex: 1 1 100%;
+   }
+
+   main {
+     padding: 15px;
+   }
+}
