@@ -224,4 +224,23 @@ tabela.addEventListener('click', (evento) => {
 document.getElementById('gerar-relatorio').addEventListener('click', gerarRelatorio);
 document.getElementById('exportar-csv').addEventListener('click', exportarCSV);
 
+// Código para alternar entre temas (escuro/claro)
+document.getElementById('toggle-theme').addEventListener('click', () => {
+   document.body.classList.toggle('dark-theme');
+   // Salvar a escolha no localStorage
+   if (document.body.classList.contains('dark-theme')) {
+      localStorage.setItem('theme', 'dark');
+   } else {
+      localStorage.setItem('theme', 'light');
+   }
+});
+
+// Carregar o tema salvo do localStorage ao carregar a página
+window.addEventListener('load', () => {
+   const savedTheme = localStorage.getItem('theme');
+   if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+   }
+});
+
 atualizarTabela();

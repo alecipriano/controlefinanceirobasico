@@ -13,6 +13,8 @@
    <main>
       <header>
          <h1><i class="fas fa-wallet"></i> Controle Financeiro</h1>
+         <!-- Botão de alternância de tema -->
+         <button id="toggle-theme">🌙 Modo Escuro</button>
       </header>
 
       <section class="form-dados">
@@ -85,5 +87,14 @@
          <p>Desenvolvido por <a href="https://github.com/alecipriano">CiprianoDev</a></p>
       </footer>
    </main>
+
+   <script>
+      const toggleBtn = document.getElementById('toggle-theme');
+      const body = document.body;
+    
+      toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+      });
+    </script>
 </body>
 </html>
