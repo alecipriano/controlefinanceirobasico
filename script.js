@@ -49,6 +49,31 @@ const atualizarTabela = () => {
    saldo.className = (receitas - gastos) >= 0 ? 'positivo' : 'negativo';
 };
 
+// Adicionando a ordenação
+document.getElementById('ordenar-por').addEventListener('change', (e) => {
+   const criterio = e.target.value;
+
+   registros.sort((a, b) => {
+      const dataA = new Date(a.data);
+      const dataB = new Date(b.data);
+
+      switch (criterio) {
+         case 'data-desc':
+            return dataB - dataA;
+         case 'data-asc':
+            return dataA - dataB;
+         case 'valor-desc':
+            return b.valor - a.valor;
+         case 'valor-asc':
+            return a.valor - b.valor;
+         default:
+            return 0;
+      }
+   });
+
+   atualizarTabela(); // Reexibe a tabela ordenada
+});
+
 const adicionarRegistro = (evento) => {
    evento.preventDefault();
 
